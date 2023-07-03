@@ -83,6 +83,7 @@ def create_histogram_plot(df: pd.core.frame.DataFrame, bins: int):
         data = df[df.Station==station]
         x = data[pollutant].values 
         try:
+            plt.style.use('seaborn')
             plt.figure(figsize=(12,6))
             plt.xlabel(f'{pollutant} concentration', fontsize=FONT_SIZE_AXES)
             plt.ylabel('Number of measurements', fontsize=FONT_SIZE_AXES)
